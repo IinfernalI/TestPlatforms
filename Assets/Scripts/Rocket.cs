@@ -3,17 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Rocket : MonoBehaviour
 {
+    [SerializeField] private int battery;
+    [SerializeField] private Text energyText;
+    [SerializeField] private int energyTotal = 2000;
+    [SerializeField] private int energyApply = 5;
+    
     [SerializeField] private float rotSpeed = 100f;
     [SerializeField] private float flySpeed = 15f;
     
     [SerializeField] private AudioClip flySound;
     [SerializeField] private AudioClip boomSound;
     [SerializeField] private AudioClip finishSound;
-
-
+    
     [SerializeField] private ParticleSystem leftFlameParticles;
     [SerializeField] private ParticleSystem rightFlameParticles;
     [SerializeField] private ParticleSystem DeathParticles;
@@ -34,6 +39,7 @@ public class Rocket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        energyText.text = energyTotal.ToString();
         state = State.Playing;
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
@@ -42,7 +48,7 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (state == State.Playing)
+        if (state == State.Playing && energyTotal > 5)
         {
             Launch();
             Rotation();
@@ -83,8 +89,8 @@ public class Rocket : MonoBehaviour
             case "Finish":
                 Finish();
                 break;
-            case "Battery": 
-                print("+en");
+            case "Battery":
+                PlusEnergy(battery, collision.gameObject);
                 break;
             default:
                 Lose();
@@ -92,6 +98,14 @@ public class Rocket : MonoBehaviour
         }
     }
 
+    void PlusEnergy(int energyToAdd, GameObject batteryObj)
+    {
+        batteryObj.GetComponent<BoxCollider>().enabled = false;
+        energyTotal += energyToAdd;
+        energyText.text = energyTotal.ToString();
+        Destroy(batteryObj);
+    }
+    
     void Lose()
     {
         state = State.Dead;
@@ -134,6 +148,8 @@ public class Rocket : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            energyTotal -= Convert.ToInt32(energyApply * Time.deltaTime);
+            energyText.text = energyTotal.ToString();
             rigidBody.AddRelativeForce(Vector3.up * flySpeed * Time.deltaTime); 
             if (!audioSource.isPlaying) 
             { 

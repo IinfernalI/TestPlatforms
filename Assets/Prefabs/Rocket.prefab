@@ -260,6 +260,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d94cc635f31c245bcd094eff8c16d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battery: 0
+  energyText: {fileID: 0}
+  energyTotal: 1000
+  energyApply: 240
   rotSpeed: 150
   flySpeed: 1300
   flySound: {fileID: 8300000, guid: 1779857080886fb4f8009c709df7c90a, type: 3}
