@@ -19,6 +19,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] private ParticleSystem DeathParticles;
     [SerializeField] private ParticleSystem FinishParticles;
 
+    private bool colissionOff = false;
     private Rigidbody rigidBody;
     private AudioSource audioSource;
 
@@ -46,11 +47,30 @@ public class Rocket : MonoBehaviour
             Launch();
             Rotation();
         }
+
+        if (Debug.isDebugBuild)
+        {
+            DebugKeys();
+        }
+        
+    }
+
+    void DebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            colissionOff = !colissionOff;
+        }
     }
 
     void OnCollisionEnter(Collision collision) //Метод который берет колизию обьекста к которому прикреплен скрипт
     {
-        if (state != State.Playing)
+        if (state == State.Dead || state == State.NextLevel || colissionOff)
         {
             return;
         }
@@ -93,7 +113,15 @@ public class Rocket : MonoBehaviour
 
     void LoadNextLevel()
     {
-        SceneManager.LoadScene("Level 2"); //Загрузка новой сцены
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextLevelIndex = currentLevelIndex + 1;
+
+        if (nextLevelIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextLevelIndex = 0;
+        }
+        SceneManager.LoadScene(nextLevelIndex);
+        //SceneManager.LoadScene("Level 2"); //Загрузка новой сцены
         //SceneManager.LoadScene(1); можно так же так указывать как и индекс
     }
     
