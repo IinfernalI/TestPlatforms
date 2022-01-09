@@ -118,7 +118,7 @@ public class Rocket : MonoBehaviour
 
         if (nextLevelIndex == SceneManager.sceneCountInBuildSettings)
         {
-            nextLevelIndex = 0;
+            nextLevelIndex = 1;
         }
         SceneManager.LoadScene(nextLevelIndex);
         //SceneManager.LoadScene("Level 2"); //Загрузка новой сцены
@@ -127,7 +127,7 @@ public class Rocket : MonoBehaviour
     
     void LoadFirstLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void Launch()
