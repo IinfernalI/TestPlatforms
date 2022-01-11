@@ -1291,11 +1291,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6112740654445270854, guid: a821c4c209801254bb690a5711408e3a,
         type: 3}
-      propertyPath: flySpeed
-      value: 1300
-      objectReference: {fileID: 0}
-    - target: {fileID: 6112740654445270854, guid: a821c4c209801254bb690a5711408e3a,
-        type: 3}
       propertyPath: energyText
       value: 
       objectReference: {fileID: 442468680}
@@ -1415,17 +1410,17 @@ PrefabInstance:
     - target: {fileID: 8328129954822770275, guid: 5896d488f5bb50c46925b32ccebeec0a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.947569
+      value: -24.19
       objectReference: {fileID: 0}
     - target: {fileID: 8328129954822770275, guid: 5896d488f5bb50c46925b32ccebeec0a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.719883
+      value: 31.27
       objectReference: {fileID: 0}
     - target: {fileID: 8328129954822770275, guid: 5896d488f5bb50c46925b32ccebeec0a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -58.627598
+      value: -66.7
       objectReference: {fileID: 0}
     - target: {fileID: 8328129954822770275, guid: 5896d488f5bb50c46925b32ccebeec0a,
         type: 3}

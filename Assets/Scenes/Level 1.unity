@@ -1339,19 +1339,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6112740654445270854, guid: a821c4c209801254bb690a5711408e3a,
         type: 3}
-      propertyPath: battery
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6112740654445270854, guid: a821c4c209801254bb690a5711408e3a,
-        type: 3}
       propertyPath: energyText
       value: 
       objectReference: {fileID: 126005344}
-    - target: {fileID: 6112740654445270854, guid: a821c4c209801254bb690a5711408e3a,
-        type: 3}
-      propertyPath: energyApply
-      value: 250
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a821c4c209801254bb690a5711408e3a, type: 3}
 --- !u!1001 &4804023514433443323

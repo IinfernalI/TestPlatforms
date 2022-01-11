@@ -1675,11 +1675,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6112740654445270854, guid: a821c4c209801254bb690a5711408e3a,
         type: 3}
-      propertyPath: battery
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 6112740654445270854, guid: a821c4c209801254bb690a5711408e3a,
-        type: 3}
       propertyPath: energyText
       value: 
       objectReference: {fileID: 916568265}
@@ -1784,17 +1779,17 @@ PrefabInstance:
     - target: {fileID: 8328129954822770275, guid: 5896d488f5bb50c46925b32ccebeec0a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.649296
+      value: -17.74
       objectReference: {fileID: 0}
     - target: {fileID: 8328129954822770275, guid: 5896d488f5bb50c46925b32ccebeec0a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 51.718292
+      value: 52.45
       objectReference: {fileID: 0}
     - target: {fileID: 8328129954822770275, guid: 5896d488f5bb50c46925b32ccebeec0a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -57.156826
+      value: -64.06
       objectReference: {fileID: 0}
     - target: {fileID: 8328129954822770275, guid: 5896d488f5bb50c46925b32ccebeec0a,
         type: 3}
